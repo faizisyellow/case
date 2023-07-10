@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+
+body {
+  background-color: #ddd;
+  font-size: 18px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+/* container */
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+/* header */
+.header {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+  grid-template-areas:
+    "album-head album-head"
+    "album-1 album-2";
+}
+.album-head {
+  grid-area: album-head;
+  min-height: 300px;
+  background-image: url(assets/Header.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  border-radius: 10px;
+}
+.album-head > * {
+  display: none;
+}
+.album {
+  color: white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.album-1 {
+  grid-area: album-1;
+  background-image: url(assets/subHeader.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+.album-2 {
+  grid-area: album-2;
+  background-image: url(assets/subHeader2.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+.album .title {
+  font-size: 3em;
+  font-weight: 200;
+}
+
+/* navigation */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+.menu .brand {
+  font-size: 1.3em;
+  text-decoration: underline;
+  color: black;
+}
+.menu ul {
+  list-style: none;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.menu a {
+  display: block;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.9;
+  border-radius: 10px;
+}
+
+/* Humberger Menu */
+
+.menu-togle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.menu-togle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-togle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #f3f0f0;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+/* Humberger Menu Animation */
+.menu-togle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-togle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-togle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-togle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-togle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Profile */
+.profile {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+.profile:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
+}
+/* about */
+.about-us {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.about {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
+}
+.about h3 {
+  font-size: 1.5em;
+}
+.about p {
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+/* .gallery {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px 1fr));
+  gap: 5px;
+}
+.gallery h2 {
+  grid-column: 1/-1;
+  text-align: center;
+  margin-bottom: 20px;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+.gallery-member > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-member > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.gallery-member {
+  margin-top: 100px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+}
+.mafia-album {
+  grid-column: 1 /3;
+  grid-row: 1 / 3;
+}
+.notShy-album {
+  grid-column: 3 /1;
+  grid-row: 3/5;
+}
+.yuna {
+  grid-column: 3/5;
+  grid-row: 1/2;
+}
+.yeji {
+  grid-column: 3/4;
+  grid-row: 2/4;
+}
+.ryujin {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+.chaeryeong {
+  grid-column: 4/5;
+  grid-row: 3/5;
+}
+/* responsive*/
+
+@media (max-width: 1024px) {
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+  .brand {
+    display: none;
+  }
+  .album-head > * {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  .album-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
+@media (max-width: 768px) {
+  .menu {
+    order: -1;
+    justify-items: end;
+  }
+  .menu-togle {
+    display: flex;
+  }
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #000;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  .menu ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .about-us {
+    display: grid;
+    grid-template-areas:
+      "about-1 about-2"
+      "about-3 about-4";
+  }
+  .about.satu {
+    grid-area: about-1;
+  }
+  .about.dua {
+    grid-area: about-2;
+  }
+  .about.tiga {
+    grid-area: about-3;
+  }
+  .about.empat {
+    grid-area: about-4;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    margin: 1px;
+  }
+  .album-head {
+    grid-template-areas:
+      "album-head"
+      "album-1"
+      "album-2";
+  }
+  .profile {
+    font-size: 12px;
+    padding-left: 5px;
+  }
+  .gallery-member {
+    display: grid;
+    grid-template-areas:
+      "album1"
+      "album2"
+      "yuna"
+      "yeji"
+      "ryujin"
+      "chaeryeong"
+      "lia";
+  }
+  .mafia-album {
+    grid-area: album1;
+  }
+  .notShy-album {
+    grid-area: album2;
+  }
+  .yuna {
+    grid-area: yuna;
+  }
+  .yeji {
+    grid-area: yeji;
+  }
+  .ryujin {
+    grid-area: ryujin;
+  }
+  .chaeryeong {
+    grid-area: chaeryeong;
+  }
+  .lia {
+    grid-area: lia;
+  }
+}

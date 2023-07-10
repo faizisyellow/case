@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITZY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="album-head">
+          <h2 class="heading">ITZY</h2>
+          <p class="paragraph">CHECKMATE</p>
+        </div>
+        <div class="album album-1">
+          <h4 class="title">LOCO</h4>
+          <p class="paragraph">ALBUM. 2023</p>
+        </div>
+        <div class="album album-2">
+          <h4 class="title">JAPANESE ALBUM</h4>
+          <p class="paragraph">EPs.2023</p>
+        </div>
+      </header>
+
+      <nav class="menu">
+        <div class="menu-togle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="brand">
+          <h1>ITZY</h1>
+        </div>
+        <ul class="menu-list">
+          <li><a href="">Home</a></li>
+          <li><a href="">Show</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Gallery</a></li>
+        </ul>
+      </nav>
+
+      <section class="profile">
+        <h4>
+          Itzy is a girl music group made by JYP Entertainment with 5 members, namely Hwang Ye-ji, Choi Ji-su, Shin Ryu-jin, Lee Chae-ryeong, and Shin Yu-na. The group debuted on February 12, 2019, with the release of the single It'z
+          Different.
+        </h4>
+      </section>
+
+      <section class="about-us">
+        <div class="about satu">
+          <h3>Idol</h3>
+          <p>ITZY to be liked by many Fans</p>
+        </div>
+        <div class="about dua">
+          <h3>Dancer</h3>
+          <p>ITZY is one of best dancer</p>
+        </div>
+        <div class="about tiga">
+          <h3>Kpop</h3>
+          <p>ITZY would top ten in Korean music chart</p>
+        </div>
+        <div class="about empat">
+          <h3>Go US</h3>
+          <p>88 rising had ITZY on HITC</p>
+        </div>
+      </section>
+
+      <section class="gallery-member">
+        <div class="mafia-album">
+          <img src="assets/itzy-mafia.jpg" alt="" />
+        </div>
+
+        <div class="notShy-album">
+          <img src="assets/notShy.jpg" alt="" />
+        </div>
+
+        <div class="yuna">
+          <img src="assets/card1.jpg" alt="" />
+        </div>
+
+        <div class="yeji">
+          <img src="assets/card2.jpg" alt="" />
+        </div>
+
+        <div class="ryujin">
+          <img src="assets/card3.jpg" alt="" />
+        </div>
+
+        <div class="chaeryeong">
+          <img src="assets/card4.jpg" alt="" />
+        </div>
+        <div class="lia">
+          <img src="assets/card5.jpg" alt="" />
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const menuTogle = document.querySelector(".menu-togle input");
+      const nav = document.querySelector("nav ul");
+
+      menuTogle.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
+  </body>
+</html>
